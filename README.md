@@ -1,7 +1,7 @@
 # Version Control Application
 
 More than just a Source Version Control. It is more a DevOps integrated tool.
-- https://verctl.luxair.dev
+- https://verctl.maduma.org
 
 ## GitLab Community Edition
 
