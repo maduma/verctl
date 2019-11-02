@@ -9,14 +9,14 @@ More than just a Source Version Control. It is more a DevOps integrated tool.
 - Persistance is done using Azure File Share
 - Configuration is passed using Environment Variable
 
-## Azure Setup
+## Azure File share Setup/Unsetup
 
 - Create a resource group (verctl)
 - Create a storage account
 - Create a file share
 ```
-$ bash azure-up.sh
-$ bash azure-down.sh
+$ bash azure-fs-up.sh
+$ bash azure-fs-down.sh
 ```
 
 ## Application wrapper script
