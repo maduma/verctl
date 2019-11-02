@@ -2,14 +2,16 @@
 
 set -e
 
+URL=https://verctl.madum.org/
 APP=verctl
-STORAGE_KEY=$( az storage account keys list -g $APP \
-    --account-name $APP --query "[0].value" --output tsv )
 
 az container show -g $APP -n $APP -o none 2>/dev/null && {
     echo "AlreadyRunning"
     exit 0
 }
+
+STORAGE_KEY=$( az storage account keys list -g $APP \
+    --account-name $APP --query "[0].value" --output tsv )
 
 az container create \
     -g $APP \
@@ -18,6 +20,10 @@ az container create \
     --image gitlab/gitlab-ce \
     --dns-name-label $APP \
     --ports 22 80 443 \
+    --cpu 2 \
+    --memory 4 \
+    --environment-variables \
+        GITLAB_OMNIBUS_VONFIG="external_url '$URL'" \
     --azure-file-volume-account-name $APP \
     --azure-file-volume-account-key $STORAGE_KEY \
     --azure-file-volume-share-name $APP \
