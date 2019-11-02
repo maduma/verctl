@@ -29,5 +29,5 @@ is_storage_exists || az storage account create \
 --kind StorageV2 --sku Standard_LRS -g $APP -l $LOCATION -n $APP
 
 # Create the file share
-is_group_exists || az storage share create \
+is_share_exists || az storage share create \
 --account-name $APP -n $APP
