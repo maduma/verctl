@@ -17,7 +17,7 @@ More than just a Source Version Control. It is more a DevOps integrated tool.
 ## Wrapper script
 ```
 $ bash verctl.sh
-Usage: verctl.sh start|stop|backup|restore
+Usage: verctl.sh status|start|stop|backup|restore
 ```
 
 ## gitlab.rg configuration file
