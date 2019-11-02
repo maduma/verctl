@@ -8,7 +8,6 @@ LOCATION=westeurope
 # Create a resource group
 az group show --name $APP -o none 2>/dev/null || \
 az group create -l $LOCATION -n $APP
-az group show --name $APP -o table
 
 # Create a storage account
 az storage account show --name $APP -o none 2>/dev/null || \
@@ -18,9 +17,8 @@ az storage account create \
     --kind StorageV2 \
     --sku Standard_LRS \
     -n $APP
-az storage account show --name $APP -o table
 
 # Create the file share
-az storage share create \
-    --account-name $APP \
-    -n $APP
+az storage share show -n verctl --account-name verctl \
+    -o none 2>/dev/null || \
+az storage share create --account-name $APP -n $APP
