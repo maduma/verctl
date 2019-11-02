@@ -29,4 +29,5 @@ az container create \
 FQDN=$( az container show \
     -g $APP -n $APP --query "ipAddress.fqdn" -o tsv )
 
-echo "fqdn: $FQDN"
+echo "Application $APP started."
+echo "FQDN: $FQDN"
