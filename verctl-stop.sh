@@ -9,6 +9,6 @@ az container show -g $APP -n $APP -o none 2>/dev/null || {
     exit 0
 }
 
-az container delete -g $APP -n $APP -o none 
+az container delete -g $APP -n $APP -o none -y 
 
 echo "Application $APP stopped."
