@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# create all azure resource needed for container with
+# data on file share
+
 set -xe
 
 APP=verctl

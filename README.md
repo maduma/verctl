@@ -13,8 +13,13 @@ More than just a Source Version Control. It is more a DevOps integrated tool.
 
 - Create a resource group (verctl)
 - Create a storage account
+- Create a file share
+```
+$ bash azure-up.sh
+$ bash azure-down.sh
+```
 
-## Wrapper script
+## Application wrapper script
 ```
 $ bash verctl.sh
 Usage: verctl.sh status|start|stop|backup|restore
