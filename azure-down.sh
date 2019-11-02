@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 APP=verctl
 LOCATION=westeurope
 
