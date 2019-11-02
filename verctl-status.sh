@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -xe
+set -e
 
 APP=verctl
 
@@ -15,10 +15,13 @@ function container_state {
 }
 
 function container_fqdn {
-    is_container_exists && \
     az container show -g $APP -n $APP \
     --query "ipAddress.fqdn" -o tsv
 }
 
+is_container_exists || {
+    echo "Down"
+    exit 0
+}
 container_state
 container_fqdn
