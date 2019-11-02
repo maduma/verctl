@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -xe
+set -e
 
 function error {
     echo "$@"
@@ -26,7 +26,7 @@ az container create \
     --azure-file-volume-share-name $APP \
     --azure-file-volume-mount-path /usr/local/apache2/htdocs/
 
-$CNAME=$( az container show \
+$FQDN=$( az container show \
     -g $APP -n $APP --query "ipAddress.fqdn" -o tsv )
 
-echo "Please create a CNAME record: $CNAME"
+echo "fqdn: $FQDN"
