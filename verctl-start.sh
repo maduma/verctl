@@ -23,7 +23,7 @@ az container create \
     --cpu 2 \
     --memory 4 \
     --environment-variables \
-        GITLAB_OMNIBUS_VONFIG="external_url '$URL';" \
+        GITLAB_OMNIBUS_CONFIG="external_url '$URL';" \
     --azure-file-volume-account-name $APP \
     --azure-file-volume-account-key $STORAGE_KEY \
     --azure-file-volume-share-name $APP \
