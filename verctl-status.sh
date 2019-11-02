@@ -20,7 +20,7 @@ function container_fqdn {
 }
 
 is_container_exists || {
-    echo "Container do not exists!"
+    echo "NoContainer"
     exit 0
 }
 container_state
