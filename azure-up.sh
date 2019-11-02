@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -v
+set -xe
 
 APP=verctl
 LOCATION=westeurope
@@ -19,3 +19,8 @@ az storage account create \
     --sku Standard_LRS \
     -n $APP
 az storage account show --name $APP -o table
+
+# Create the file share
+az storage share create \
+    --account-name $APP \
+    -n $APP
