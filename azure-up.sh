@@ -18,4 +18,4 @@ az storage account create \
     --kind StorageV2 \
     --sku Standard_LRS \
     -n $APP
-az storage acount show --name $APP -o table
+az storage account show --name $APP -o table
