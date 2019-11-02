@@ -26,7 +26,7 @@ az container create \
     --azure-file-volume-share-name $APP \
     --azure-file-volume-mount-path /usr/local/apache2/htdocs/
 
-$FQDN=$( az container show \
+FQDN=$( az container show \
     -g $APP -n $APP --query "ipAddress.fqdn" -o tsv )
 
 echo "fqdn: $FQDN"
