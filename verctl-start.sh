@@ -2,7 +2,7 @@
 
 set -e
 
-URL=https://verctl.madum.org/
+URL=https://verctl.maduma.org/
 APP=verctl
 
 az container show -g $APP -n $APP -o none 2>/dev/null && {
