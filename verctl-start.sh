@@ -17,7 +17,7 @@ az container create \
     -g $APP \
     -n $APP \
     -l westeurope \
-    --image gitlab/gitlab-ce \
+    --image gitlab/gitlab-ce:12.3.6-ce.0 \
     --dns-name-label $APP \
     --ports 22 80 443 \
     --cpu 2 \
